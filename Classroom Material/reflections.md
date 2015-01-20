@@ -1,3 +1,22 @@
+## 1/20/2015 
+
+Instructor Notes
+Check out the [demo page](http://udacity-crp.herokuapp.com/cssom.html) we're using in this example: compare the HTML to the resulting render tree and what you see on the screen. Neat, right?
+You can learn more about [Render Tree construction](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction) at Google's Web Fundamentals.
+
+Instructor Notes
+Check out the [demo page](http://udacity-crp.herokuapp.com/cssom.html) we're using in this example: compare the HTML to the resulting render tree and what you see on the screen. Neat, right?
+You can learn more about [Render Tree construction](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction) at Google's Web Fundamentals.
+
+### Measure First --> then optimize as needed. 
+
+Instructor Notes
+Learn more about [saving and loading timeline recordings](https://developer.chrome.com/devtools/docs/timeline#saving-and-loading-recordings).
+Download the [timeline trace](https://raw.githubusercontent.com/igrigorik/udacity-webperf/master/assets/cssom-timeline.json) used in this video.
+
+Instructor's notes:
+Why does the browser match CSS selectors from right to left? Check out this [great discussion on StackOverflow](http://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left).
+
 ## 1/19/2015
 
 Instructor Notes
