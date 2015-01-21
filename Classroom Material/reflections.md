@@ -1,3 +1,21 @@
+## 1/21/2015
+
+### setting the viewport
+Always include: <meta name="viewport" content="width=device-width, initial-scale=1">
+
+-  Use meta viewport tag to control the width and scaling of the browsers viewport.
+-  Include width=device-width to match the screen's width in device independent pixels.
+-  Include initial-scale=1 to establish a 1:1 relationship between CSS pixels and device independent pixels.
+-  Ensure your page is accessible by not disabling user scaling.
+
+### Good information: display:none vs. hidden
+
+"As a brief aside, note that 'visibility: hidden' is different from 'display: none'. The former makes the element invisible, but the element is still occupies space in the layout (i.e. it's rendered as an empty box), whereas the latter (display: none) removes the element entirely from the render tree such that the element is invisible and is not part of layout."
+
+### Instructor Notes
+Learn more about [render-tree construction, layout, and paint](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+Learn more about [layout viewport and the basics of responsive web design](https://developers.google.com/web/fundamentals/layouts/rwd-fundamentals/)
+
 ## 1/20/2015 
 
 Instructor Notes
