@@ -1,12 +1,55 @@
 
 # Lesson 2 Material
 
-## 2/5/2015 - 
+## 2/5/2015 - Optimizing the CRP
+
+Instructor Notes
+
+To learn more about the preload scanner, check out "[How the Browser Pre-loader Makes Pages Load Faster](http://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)".
+
+Instructor Notes
+
+Review the [Critical Rendering Path performance patterns](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns) on Web Fundamentals.
+
+Instructor Notes
+
+Learn more about [optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path)
+Review the [Critical Rendering Path performance patterns](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns)
+Check out the PageSpeed mobile analysis documentation on guidance for [how to deliver a page that can be rendered in one second or less](https://developers.google.com/speed/docs/insights/mobile). To learn more about TCP Slow Start, check out Ilya's [book, High Performance Browser Networking](http://hpbn.co/).
+
+At the end of the course, you'll find a [tough bonus question](https://www.udacity.com/course/viewer#!/c-ud884/l-1469569174/e-1524418574/m-1524418575) on TCP slow start. Give it a shot if you want to learn the math behind calculating how long files will take to download with TCP slow start.
+
+![Great overview screenshot on patterns](https://www.evernote.com/shard/s2/sh/83e37fb4-14b2-4534-a5c5-e01d2edf5c18/9bc675b97cd3d60edba40b192199a9d7/deep/0/Classroom---Udacity.png "Optimization Patterns")
+
+The above table illustrates the savings provided by GZIP compression for a few of the most popular JavaScript libraries and CSS frameworks. The savings range from 60 to 88%, and note that the combination of minified files (identified by “.min” in their filenames), plus GZIP, offers an even larger win.
+Apply content-specific optimizations first: CSS, JS, and HTML minifiers.
+Apply GZIP to compress the minified output.
+The best part is that enabling GZIP is one of the simplest and highest payoff optimizations to implement - sadly, many people still forget to implement it. Most web servers will compress content on your behalf, and you just need to verify that the server is correctly configured to compress all the content types that would benefit from GZIP compression.
+
+TL;DR
+GZIP performs best on text-based assets: CSS, JavaScript, HTML
+All modern browsers support GZIP compression and will automatically request it
+Your server needs to be configured to enable GZIP compression
+Some CDNs require special care to ensure that GZIP is enabled
+
+In short, as a first step in optimizing the efficiency of your assets, build an inventory of the different content types and consider what kinds of content-specific optimizations you can apply to reduce their size - doing so can yield significant savings! Then, once you’ve figured out what they are, automate these optimizations by adding them to your build and release processes - that’s the only way you can guarantee that the optimizations will stay in place.
+
+Instructor Notes
+
+Learn more about [resource minification](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#minification-preprocessing--context-specific-optimizations)
+Learn more about [text compression with GZip](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#text-compression-with-gzip)
+Learn more about [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
 
 # Lesson 1 Material
 
 ## 2/5/2015
+The HTML specification dictates specific conditions for each and every event: when it should be fired, which conditions should be met, and so on. For our purposes, we’ll focus on a few key milestones related to the critical rendering path:
+domInteractive marks when DOM is ready.
+domContentLoaded typically marks when both the DOM and CSSOM are ready.
+If there is no parser blocking JavaScript then documentContentLoaded will fire immediately after domInteractive.
+domComplete marks when the page and all of its subresources are ready.
+
 Adding the async keyword to the script tag tells the browser that it should not block the DOM construction while it waits for the script to become available - this is a huge performance win!
 
 ## 1/31/2015 - Analyzing the entire crp in devtools
