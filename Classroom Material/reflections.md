@@ -1,7 +1,16 @@
-## 1/31
 
-## 1/31/2015
-### Analyzing the entire crp in devtools - Instructor Notes
+# Lesson 2 Material
+
+## 2/5/2015 - 
+
+
+# Lesson 1 Material
+
+## 2/5/2015
+Adding the async keyword to the script tag tells the browser that it should not block the DOM construction while it waits for the script to become available - this is a huge performance win!
+
+## 1/31/2015 - Analyzing the entire crp in devtools
+Instructor Notes
 
 Here's a link to the [sample page](http://udacity-crp.herokuapp.com/cssom-inline.html) Ilya uses. For bonus points, review the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) content on Google's Web Fundamentals.
 
