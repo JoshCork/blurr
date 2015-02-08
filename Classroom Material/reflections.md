@@ -1,10 +1,24 @@
 
 # Lesson 2 Material
 
+## 2/8/2015 - Final CRP Project Notes
+
+![Optimizing your portfolio page](https://www.evernote.com/shard/s2/sh/4012c8b5-a931-4d0a-a7e0-57c98d4a1b49/601224f1fce874fa297d42a8758ab356/deep/0/Classroom---Udacity.png "Final Project: Optimize your Portfolio Page")
+
+Instructor Notes
+
+You can find the portfolio GitHub repo [here](https://github.com/udacity/frontend-nanodegree-mobile-portfolio) and a live version of Cameron's portfolio [here](http://cameronwp.github.com/udportfolio).
+
+Using GitHub
+
+If you are not familiar with Git and GitHub, the GitHub help pages are a great place to start. In particular, check out the following guides: setup Git, fork a repo, hosting with GitHub Pages, and the references section to learn more.
+
+Check out the [course materials page](https://www.udacity.com/wiki/ud884) for project tips, tricks and inspiration.
+
 ## 2/6/2015 - Optimizing the CRP
 
 Example CRP Diagram:
-![Example CRP Diagram](../screenShots/crpDiagram.png "Example CRP Diagram")
+![Example CRP Diagram](https://www.evernote.com/shard/s2/sh/9cee629b-008d-4417-b682-940b166f2126/a5925f74e06d5bf82b6634ad0887a684/deep/0/Classroom---Udacity.png "Example CRP Diagram")
 
 ## 2/5/2015 - Optimizing the CRP
 
