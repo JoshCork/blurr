@@ -1,6 +1,11 @@
 
 # Lesson 2 Material
 
+## 2/6/2015 - Optimizing the CRP
+
+Example CRP Diagram:
+![Example CRP Diagram](../screenShots/crpDiagram.png "Example CRP Diagram")
+
 ## 2/5/2015 - Optimizing the CRP
 
 Instructor Notes
@@ -40,6 +45,21 @@ Learn more about [resource minification](https://developers.google.com/web/funda
 Learn more about [text compression with GZip](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#text-compression-with-gzip)
 Learn more about [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
+When we talk about “optimizing the critical rendering path,” to a large degree we’re talking about understanding and optimizing the dependency graph between HTML, CSS, and JavaScript.
+
+JavaScript can query and modify DOM and CSSOM.
+JavaScript execution blocks on CSSOM.
+JavaScript blocks DOM construction unless explicitly declared as async.
+
+When declaring your stylesheet assets, pay close attention to the media type and queries, as they will have big performance impact on the critical rendering path!
+
+"CSS is a render blocking resource, get it down to the client as soon and as quickly as possible to optimize the time to first render!"
+
+However, what if we have some CSS styles that are only used under certain conditions, for example, when the page is being printed, or being projected onto a large monitor? It would be nice if we didn’t have to block rendering on these resources!
+CSS “media types” and “media queries” allow us to address these use-cases:
+<link href="style.css" rel="stylesheet">
+<link href="print.css" rel="stylesheet" media="print">
+<link href="other.css" rel="stylesheet" media="(min-width: 40em)">
 
 # Lesson 1 Material
 
