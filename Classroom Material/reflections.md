@@ -3,6 +3,8 @@
 
 ## 2/8/2015 - Final CRP Project Notes
 
+Goodness - I spent a while on this exercise. I believe I've got it up to par now.  Both mobile and desktop are green.  PageSpeed would get a big bump if it would compress style-min.css --> but I don't think i have control over that.  I believe that's a function of the simple server that I'm running on my desktop. 
+
 ![Optimizing your portfolio page](https://www.evernote.com/shard/s2/sh/4012c8b5-a931-4d0a-a7e0-57c98d4a1b49/601224f1fce874fa297d42a8758ab356/deep/0/Classroom---Udacity.png "Final Project: Optimize your Portfolio Page")
 
 Instructor Notes
