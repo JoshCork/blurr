@@ -1,6 +1,8 @@
 
 # Lesson 2 Material
 
+## 2/9/2015 - at the very end.  I can't for the life of me figure out how to optimize this page.  Not sure what is slowing down the FPS metric.  
+
 ## 2/8/2015 - Final CRP Project Notes
 
 Goodness - I spent a while on this exercise. I believe I've got it up to par now.  Both mobile and desktop are green.  PageSpeed would get a big bump if it would compress style-min.css --> but I don't think i have control over that.  I believe that's a function of the simple server that I'm running on my desktop. 
