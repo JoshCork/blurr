@@ -116,7 +116,7 @@ pizzaIngredients.cheeses = [
   "Havarti Cheese",
   "Jack Cheese",
   "Pepper Jack Cheese",
-  "Gruyere Cheese",
+  "Gruyere Cheese", 
   "Limberger Cheese",
   "Manchego Cheese",
   "Marscapone Cheese",
@@ -328,6 +328,7 @@ var selectRandomCrust = function() {
   return randomCrust;
 }
 
+// returns  list items out of the string that was passed in for display on the page. 
 var ingredientItemizer = function(string) {
   return "<li>" + string + "</li>";
 }
@@ -448,12 +449,21 @@ var resizePizzas = function(size) {
     return dx;
   }
 
-  // Iterates through pizza elements on the page and changes their widths
+  
+  
+/**
+ * Iterates through pizza elements on the page and changes their widths.  I optimized this code
+ * moving only the essentials into the for loop (took out the variable declaration and assignment)
+ * that was being done in every item in the for loop but was unneccessary. 
+ * @param  {number} size this is the value associed with the slider input on the html page
+ * @return {n/a}    This function does not return any value. 
+ */
   function changePizzaSizes(size) {
     var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
     var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
+    var rpcLength = document.querySelectorAll(".randomPizzaContainer").length;
 
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {      
+    for (var i = 0; i < rpcLength; i++) {      
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
   }
