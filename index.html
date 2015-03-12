@@ -8,13 +8,24 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+    <!-- ended up using a javascript async loader for the font instead of this reference. -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
 
-    <!-- <link href="css/style-min.css" rel="stylesheet" type='text/css' media="screen"> -->
+    <!-- 
+        Removed this as a link and placed inline.  See below for details.
+        <link href="css/style-min.css" rel="stylesheet" type='text/css' media="screen"> 
+    -->
+
+    <!-- 
+        Specified media queries for both of these so that they would not be rending blocking.
+     -->
     <link href="css/portrait-style-min.css" rel="stylesheet" media="orientation:portrait" type='text/css'>
     <link href="css/print-min.css" rel="stylesheet" media="print" type='text/css'>   
 
+<!-- 
+    I pulled in the critcal stylesheet and made it inline instead of referencing is so it didn't block rendering.
+    Seemed like a good trade off since the amount of css was so small it didn't merit being placed in it's own file.
+ -->
     <style type="text/css">
         html {
           font-size: 100%;
@@ -110,6 +121,9 @@
             <p>&copy; Web Performance 2014 <span id="crp-stats"></span>
             </p>
         </footer>
+<!-- 
+    Replaced my original reference above for page optimization reasons. 
+ -->
 <script type="text/javascript">
     WebFontConfig = {
         google: {
