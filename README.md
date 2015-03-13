@@ -20,6 +20,7 @@ To view my live optimized code running online please use the gh-pages branch of 
 - Added media queries for non critical CSS
 - minified some of the css files. 
 - Used an async javascript loader for the font vs. the default reference to the web font.
+- Updated google analytics to be async
 - In-lined some critical javascript used for resizing the pizza
 - Moved unnecessary code out of the for loop and into a cached variable (as opposed to calculating on each run through the loop).
 
