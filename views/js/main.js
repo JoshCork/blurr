@@ -454,7 +454,10 @@ var resizePizzas = function(size) {
 /**
  * Iterates through pizza elements on the page and changes their widths.  I optimized this code
  * moving only the essentials into the for loop (took out the variable declaration and assignment)
- * that was being done in every item in the for loop but was unneccessary. 
+ * that was being done in every item in the for loop but was unneccessary. Also per some hints from
+ * the team at Udacity I created a variable to capture the number of random pizza containers and placed
+ * and placed the value into that variable so it wasn't calculating it on the fly for each iteration of
+ * the for loop.  
  * @param  {number} size this is the value associed with the slider input on the html page
  * @return {n/a}    This function does not return any value. 
  */
