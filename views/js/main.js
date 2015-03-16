@@ -546,7 +546,9 @@ function updatePositions() {
 
     var items = document.querySelectorAll('.mover');
     for (var i = 0; i < items.length; i++) {        
-        items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
+        //items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
+        items[i].style.webkitTransform = 'translateX(' + 100 * myPhases[i % 5] + 'px)';
+        //items[i].style.left = 'translateX(' + 100 * myPhases[i % 5] + 'px)';
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
