@@ -478,17 +478,17 @@ var resizePizzas = function(size) {
      * that was being done in every item in the for loop but was unneccessary. Also per some hints from
      * the team at Udacity I created a variable to capture the number of random pizza containers and placed
      * and placed the value into that variable so it wasn't calculating it on the fly for each iteration of
-     * the for loop.
+     * the for loop. Also I started using getElementByClassName as opposed to querySelectorAll.
      * @param  {number} size this is the value associed with the slider input on the html page
      * @return {n/a}    This function does not return any value.
      */
     function changePizzaSizes(size) {
-        var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
-        var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
-        var rpcLength = document.querySelectorAll(".randomPizzaContainer").length;
+        var dx = determineDx(document.getElementsByClassName('randomPizzaContainer')[0], size);
+        var newwidth = (document.getElementsByClassName('randomPizzaContainer')[0].offsetWidth + dx) + 'px';
+        var rpcLength = document.getElementsByClassName('randomPizzaContainer').length;
 
         for (var i = 0; i < rpcLength; i++) {
-            document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+            document.getElementsByClassName('randomPizzaContainer')[i].style.width = newwidth;
         }
     }
 
@@ -504,8 +504,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-for (var i = 2; i < 100; i++) {
-    var pizzasDiv = document.getElementById("randomPizzas");
+// pulled the declaration of the variable out of the for loop. 
+var pizzasDiv = document.getElementById("randomPizzas");
+for (var i = 2; i < 100; i++) {    
     pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -539,14 +540,17 @@ function updatePositions() {
     window.performance.mark("mark_start_frame");
     myTop = document.body.scrollTop;
     var myPhases = [];
-    var myItems = document.querySelectorAll('.mover');
 
     for (var i = 0; i < 5; i++) {
         myPhases[i] = Math.sin((myTop / 1250) + i);
     }
-    
-    for (var i = 0; i < myItems.length; i++) {                
-        myItems[i].style.webkitTransform = 'translateX(' + 100 * myPhases[i % 5] + 'px)';        
+
+    var items = document.getElementsByClassName('mover');
+    for (var i = 0; i < items.length; i++) {        
+        // items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
+        // console.log("MyPhases index of " + i%5 + " is " + myPhases[i%5]);
+        // console.log("translateX value: " + 100 * myPhases[i%5] + "px");
+        items[i].style.webkitTransform = 'translateX(' + 1000 * myPhases[i % 5] + '%)';         
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -566,22 +570,16 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
     var s = 256;
-    for (var i = 0; i < 200; i++) {
+    for (var i = 0; i < 100; i++) {
         var elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/bgPizza.png";
-        // elem.style.height = "100px";
-        // elem.style.width = "73.333px";
+        elem.style.height = "100px";
+        elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         document.querySelector("#movingPizzas1").appendChild(elem);
     }
-    var items = document.querySelectorAll('.mover');
-    // moved this from the updatePositions() function so that it rendered the position
-    // of the pizzas just once (not every time the scroll occured), and I replaced that 
-    // with a translateX transform.  
-    for (var e = 0; e < items.length; e++) {        
-        items[e].style.left = items[e].basicLeft + 100 * (e % 5) + 'px';        
-    }
+   
     updatePositions();
 });
