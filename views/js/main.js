@@ -484,7 +484,7 @@ var resizePizzas = function(size) {
      */
     function changePizzaSizes(size) {
         var rpcArray = determineDx(document.getElementsByClassName('randomPizzaContainer')
-        var dx = rpcArray[0], size);
+        var dx = determineDX(rpcArray[0], size);
         var newwidth = (rpcArray[0].offsetWidth + dx) + 'px';
         var rpcLength = rpcArray.length;
 
