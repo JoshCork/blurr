@@ -473,15 +473,10 @@ var resizePizzas = function(size) {
 
 
     /**
-     * Iterates through pizza elements on the page and changes their widths.  I optimized this code:
-     * Moving only the essentials into the for loop (took out the variable declaration and assignment)
-     * that was being done in every item in the for loop but was unneccessary. 
-     * The For Loop was querying the dom for each iteration of the loop so I used a cached variable instead.
-     * Also, i was querying the dom over and over for the same thing 'randomPizzaContainers' - so instead i query it once and place
-     * it into an array and reuse that array.
-     * 
-     * 
-     * Also per some hints fromthe team at Udacity I created a variable to capture the number of random pizza containers and placed
+     * Iterates through pizza elements on the page and changes their widths.  I optimized this code
+     * moving only the essentials into the for loop (took out the variable declaration and assignment)
+     * that was being done in every item in the for loop but was unneccessary. Also per some hints from
+     * the team at Udacity I created a variable to capture the number of random pizza containers and placed
      * and placed the value into that variable so it wasn't calculating it on the fly for each iteration of
      * the for loop. Also I started using getElementByClassName as opposed to querySelectorAll.
      * @param  {number} size this is the value associed with the slider input on the html page
@@ -494,7 +489,7 @@ var resizePizzas = function(size) {
 
         for (var i = 0; i < rpcLength; i++) {
             document.getElementsByClassName('randomPizzaContainer')[i].style.width = newwidth;
-        }        
+        }
     }
 
     changePizzaSizes(size);
@@ -539,29 +534,22 @@ function logAverageFrame(times) { // times is the array of User Timing measureme
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-/**
- * Moves the sliding background pizzas based on scroll position
- * Optimizations improvements I made include:
- * - pulled the calculation for phase out of the for loop and cached the value in a variable.
- * - chached the value for document.body.scrolltop in a variable (myTop).
- * - pre calculated the five values associated with phase and stored them in an array.
- * - used a webkit transform to move the pizzeas instead of css to offload processing to the gpu
- * - precalculated the length of the items array and cached in a variable rather than calculating in the for loop
- * @return {n/a} this function does not return any values.
- */
+// Moves the sliding background pizzas based on scroll position
 function updatePositions() {
     frame++;
     window.performance.mark("mark_start_frame");
     myTop = document.body.scrollTop;
     var myPhases = [];
-    var items = document.getElementsByClassName('mover');
-    var iLength = items.length;
 
     for (var i = 0; i < 5; i++) {
         myPhases[i] = Math.sin((myTop / 1250) + i);
     }
-    
-    for (var i = 0; i < iLength; i++) {                
+
+    var items = document.getElementsByClassName('mover');
+    for (var i = 0; i < items.length; i++) {        
+        // items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
+        // console.log("MyPhases index of " + i%5 + " is " + myPhases[i%5]);
+        // console.log("translateX value: " + 100 * myPhases[i%5] + "px");
         items[i].style.webkitTransform = 'translateX(' + 1000 * myPhases[i % 5] + '%)';         
     }
 
@@ -579,7 +567,6 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
-// Optimized the pizza image, reduced the number of random pizza's per the grader's recommendation. 
 document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
     var s = 256;
