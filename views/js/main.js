@@ -541,16 +541,15 @@ function updatePositions() {
     window.performance.mark("mark_start_frame");
     myTop = document.body.scrollTop;
     var myPhases = [];
+    var items = document.getElementsByClassName('mover');
+    var iLength = items.length;
 
     for (var i = 0; i < 5; i++) {
         myPhases[i] = Math.sin((myTop / 1250) + i);
     }
 
-    var items = document.getElementsByClassName('mover');
-    for (var i = 0; i < items.length; i++) {        
-        // items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
-        // console.log("MyPhases index of " + i%5 + " is " + myPhases[i%5]);
-        // console.log("translateX value: " + 100 * myPhases[i%5] + "px");
+    
+    for (var i = 0; i < iLength; i++) {                
         items[i].style.webkitTransform = 'translateX(' + 1000 * myPhases[i % 5] + '%)';         
     }
 
