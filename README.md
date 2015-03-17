@@ -5,6 +5,7 @@ This Repo holds my project 4 learnings and code.  I've optimized the pages for b
 This repo has been broken up into a few folders:  
     - At the root is the project that I downloaded for optimization.
     - Classroom Material: This holds the reflections and projects I worked through while taking the supporting classes for this project. 
+    - Timeline Data: this folder includes screenshots and my saved timeline data running dev tools against my gitHub Pages hosted site. 
 
 To view the code that I updated just work in the root directory.
 To view my live optimized code running online please use the gh-pages branch of this repo. 
