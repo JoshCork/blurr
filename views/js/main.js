@@ -545,13 +545,12 @@ function updatePositions() {
     var iLength = items.length;
 
     for (var i = 0; i < 5; i++) {
-        myPhases[i] = 100 * Math.sin((myTop / 1250) + i);
+        myPhases[i] = 1000 * Math.sin((myTop / 1250) + i);
     }
-
     
     for (var i = 0; i < iLength; i++) {                
-        //items[i].style.webkitTransform = 'translateX(' + 1000 * myPhases[i % 5] + '%)';
-        items[i].style.left = items[i].basicLeft + myPhases[ i % 5 ] + 'px';         
+        items[i].style.webkitTransform = 'translateX(' + myPhases[i % 5] + '%)';
+        //items[i].style.left = items[i].basicLeft + myPhases[ i % 5 ] + 'px';         
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -571,7 +570,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
     var s = 256;
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 30; i++) {
         var elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/bgPizza.png";
