@@ -483,8 +483,8 @@ var resizePizzas = function(size) {
      * @return {n/a}    This function does not return any value.
      */
     function changePizzaSizes(size) {
-        var rpcArray = determineDx(document.getElementsByClassName('randomPizzaContainer');
-        var dx = determineDX(rpcArray[0], size);
+        var rpcArray = document.getElementsByClassName('randomPizzaContainer');
+        var dx = determineDx(rpcArray[0], size);
         var newwidth = (rpcArray[0].offsetWidth + dx) + 'px';
         var rpcLength = rpcArray.length;
 
