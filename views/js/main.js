@@ -549,8 +549,8 @@ function updatePositions() {
     }
     
     for (var i = 0; i < iLength; i++) {                
-        //items[i].style.webkitTransform = 'translateX(' + myPhases[i % 5] + '%)';
-        items[i].style.left = items[i].basicLeft + myPhases[ i % 5 ] + 'px';         
+        items[i].style.webkitTransform = 'translateX(' + myPhases[i % 5] + 'px)';
+        //items[i].style.left = items[i].basicLeft + myPhases[ i % 5 ] + 'px';         
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -574,8 +574,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/bgPizza.png";
-        // elem.style.height = "100px";
-        // elem.style.width = "73.333px";
+        elem.style.height = "100px";
+        elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         document.querySelector("#movingPizzas1").appendChild(elem);
