@@ -539,16 +539,14 @@ function updatePositions() {
     window.performance.mark("mark_start_frame");
     myTop = document.body.scrollTop;
     var myPhases = [];
+    var myItems = document.querySelectorAll('.mover');
 
     for (var i = 0; i < 5; i++) {
         myPhases[i] = Math.sin((myTop / 1250) + i);
     }
-
-    var items = document.querySelectorAll('.mover');
-    for (var i = 0; i < items.length; i++) {        
-        //items[i].style.left = items[i].basicLeft + 100 * myPhases[i % 5] + 'px';
-        items[i].style.webkitTransform = 'translateX(' + 100 * myPhases[i % 5] + 'px)';
-        //items[i].style.left = 'translateX(' + 100 * myPhases[i % 5] + 'px)';
+    
+    for (var i = 0; i < myItems.length; i++) {                
+        myItems[i].style.webkitTransform = 'translateX(' + 100 * myPhases[i % 5] + 'px)';        
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -577,6 +575,13 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         document.querySelector("#movingPizzas1").appendChild(elem);
+    }
+    var items = document.querySelectorAll('.mover');
+    // moved this from the updatePositions() function so that it rendered the position
+    // of the pizzas just once (not every time the scroll occured), and I replaced that 
+    // with a translateX transform.  
+    for (var e = 0; e < items.length; e++) {        
+        items[e].style.left = items[e].basicLeft + 100 * (e % 5) + 'px';        
     }
     updatePositions();
 });
