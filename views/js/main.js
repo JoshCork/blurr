@@ -494,7 +494,7 @@ var resizePizzas = function(size) {
         var rpcLength = rpcArray.length;
 
         for (var i = 0; i < rpcLength; i++) {
-            document.getElementsByClassName('randomPizzaContainer')[i].style.width = newwidth;
+            document.rpcArray[i].style.width = newwidth;
         }
     }
 
