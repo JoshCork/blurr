@@ -483,12 +483,13 @@ var resizePizzas = function(size) {
      * @return {n/a}    This function does not return any value.
      */
     function changePizzaSizes(size) {
-        var dx = determineDx(document.getElementsByClassName('randomPizzaContainer')[0], size);
-        var newwidth = (document.getElementsByClassName('randomPizzaContainer')[0].offsetWidth + dx) + 'px';
-        var rpcLength = document.getElementsByClassName('randomPizzaContainer').length;
+        var rpcArray = determineDx(document.getElementsByClassName('randomPizzaContainer')
+        var dx = rpcArray[0], size);
+        var newwidth = (rpcArray[0].offsetWidth + dx) + 'px';
+        var rpcLength = rpcArray.length;
 
         for (var i = 0; i < rpcLength; i++) {
-            document.getElementsByClassName('randomPizzaContainer')[i].style.width = newwidth;
+            rpcArray[i].style.width = newwidth;
         }
     }
 
