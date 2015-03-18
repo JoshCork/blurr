@@ -586,8 +586,10 @@ window.addEventListener('scroll', updatePositions);
 /**
  * Generates the sliding pizzas when the page loads.
  * Optimizations I performed:
- * 1. Per the grader's / office hours hints I reduced the number of pizza images on the page.
- * @return {n/a}   This function does not return any values.
+ * 1.  Per the grader's / office hours hints I reduced the number of pizza images on the page.
+ * 2.  Took out the declaration of width and height style for pizzas.  It didn't seem neccessary
+ *     and the page seemed to perform faster w/out it. 
+ * @return {n/a}   This function does not return any values. 
  */
 document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
@@ -596,8 +598,6 @@ document.addEventListener('DOMContentLoaded', function() {
         var elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/bgPizza.png";
-        // elem.style.height = "100px";
-        // elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         document.querySelector("#movingPizzas1").appendChild(elem);
